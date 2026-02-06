@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - GameOnTech Onboarding</title>
+    <link rel="stylesheet" href="css/styles-palette1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container-main">
+        <!-- Sidebar esquerda -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="assets/front.png" alt="Logo"></div>
+                <div class="sidebar-header-content">
+                    <h3>Onboarding</h3>
+                    <p>Portal do Colaborador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index-palette1.html" class="nav-link active">
+                    <img src="assets/home (2).svg" alt="Home" class="nav-icon-svg">
+                    <span>Home</span>
+                </a>
+                <a href="logs-palette1.html" class="nav-link">
+                    <img src="assets/chart-simple.svg" alt="Logs" class="nav-icon-svg">
+                    <span>Logs</span>
+                </a>
+                <a href="trabalhos-palette1.html" class="nav-link">
+                    <img src="assets/suitcase-alt.svg" alt="Trabalhos" class="nav-icon-svg">
+                    <span>Trabalhos</span>
+                </a>
+                <a href="cronograma-palette1.html" class="nav-link">
+                    <img src="assets/calendar-clock.svg" alt="Cronograma" class="nav-icon-svg">
+                    <span>Cronograma</span>
+                </a>
+                <a href="politicas-palette1.html" class="nav-link">
+                    <img src="assets/people-poll.svg" alt="Políticas" class="nav-icon-svg">
+                    <span>Políticas</span>
+                </a>
+                <a href="feedback-palette1.html" class="nav-link">
+                    <img src="assets/feedback.svg" alt="Feedback" class="nav-icon-svg">
+                    <span>Feedback</span>
+                </a>
+                <a href="chat-palette1.html" class="nav-link">
+                    <img src="assets/comment.svg" alt="Chat" class="nav-icon-svg">
+                    <span>Chat</span>
+                </a>
+                <a href="tarefas-palette1.html" class="nav-link">
+                    <img src="assets/task-checklist.svg" alt="Tarefas" class="nav-icon-svg">
+                    <span>Tarefas</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Precisa de ajuda?</p>
+                <p>Fale com seu gestor ou acesse o chat virtual.</p>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <header class="header-main">
+                <div class="header-icon">✨</div>
+                <h2>Bem-vindo ao seu onboarding</h2>
+                <p>Estamos felizes em ter você conosco. Vamos começar sua jornada?</p>
+            </header>
+
+            <main class="main-content">
+                <!-- Seção de boas-vindas -->
+                <section class="welcome-section">
+                    <h1>Olá, leobuso.souza! 👋</h1>
+                    <p>Estamos felizes em ter você conosco. Vamos começar sua jornada?</p>
+                </section>
+
+                <!-- Seção de progresso -->
+                <section class="progress-section">
+                    <div class="progress-container">
+                        <div class="progress-circle">
+                            <canvas id="progressChart"></canvas>
+                        </div>
+                        <div class="progress-info">
+                            <h3>Seu Progresso de Onboarding</h3>
+                            <p>Ótimo progresso! Continue assim.</p>
+                            <p class="pending-tasks">⏱ 2 tarefas pendentes</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção de exploração -->
+                <section class="explore-section">
+                    <h2>Explore seu onboarding</h2>
+
+                    <div class="explore-grid">
+                        <!-- Card Logs -->
+                        <div class="explore-card">
+                            <div class="card-icon">📊</div>
+                            <div class="card-number">3</div>
+                            <h4>Logs</h4>
+                            <p>Acompanhe seu progresso e atividades de integração</p>
+                            <a href="logs-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+
+                        <!-- Card Trabalhos -->
+                        <div class="explore-card">
+                            <div class="card-icon">💼</div>
+                            <div class="card-number">2</div>
+                            <h4>Novos Trabalhos</h4>
+                            <p>Veja suas tarefas e projetos atribuídos</p>
+                            <a href="trabalhos-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+
+                        <!-- Card Cronograma -->
+                        <div class="explore-card">
+                            <div class="card-icon">📅</div>
+                            <div class="card-number">3</div>
+                            <h4>Cronograma</h4>
+                            <p>Eventos, treinamentos e reuniões agendadas</p>
+                            <a href="cronograma-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+
+                        <!-- Card Políticas -->
+                        <div class="explore-card">
+                            <div class="card-icon">📋</div>
+                            <h4>Políticas</h4>
+                            <p>Normas, benefícios e cultura da empresa</p>
+                            <a href="politicas-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+
+                        <!-- Card Feedback -->
+                        <div class="explore-card">
+                            <div class="card-icon">💬</div>
+                            <h4>Feedback</h4>
+                            <p>Tire dúvidas sobre evolução e desempenho</p>
+                            <a href="feedback-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+
+                        <!-- Card Chat -->
+                        <div class="explore-card">
+                            <div class="card-icon">💭</div>
+                            <h4>Conversa com Gerente</h4>
+                            <p>Simulador para perguntas difíceis</p>
+                            <a href="chat-palette1.html" class="card-btn">Acessar ></a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer-main">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="index-palette1.html">Home</a>
+                        <a href="logs-palette1.html">Logs</a>
+                        <a href="trabalhos-palette1.html">Trabalhos</a>
+                        <a href="cronograma-palette1.html">Cronograma</a>
+                        <a href="politicas-palette1.html">Políticas</a>
+                        <a href="feedback-palette1.html">Feedback</a>
+                        <a href="chat-palette1.html">Chat</a>
+                        <a href="tarefas-palette1.html">Tarefas</a>
+                    </div>
+                    <p>&copy; 2026 GameOnTech | João Vitor, Davi Tavares e Felipe Buso</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Script para gráfico de progresso -->
+    <script src="js/progress-chart.js"></script>
+</body>
+</html>

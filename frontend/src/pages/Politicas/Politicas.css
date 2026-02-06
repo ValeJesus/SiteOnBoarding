@@ -1,0 +1,62 @@
+/* ===== POLÍTICAS PAGE ===== */
+.politicas-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.politica-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border-left: 5px solid var(--color2);
+}
+
+.politica-section h3 {
+  color: var(--color4);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.politica-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.politica-section li {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.politica-section li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color2);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.politica-section li strong {
+  color: var(--color4);
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .politica-section {
+    padding: 20px;
+  }
+  
+  .politica-section h3 {
+    font-size: 1.2rem;
+  }
+}

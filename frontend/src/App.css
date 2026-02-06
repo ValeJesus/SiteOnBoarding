@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.layout-main {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  margin-left: 250px;
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-main {
+    flex-direction: column;
+  }
+  
+  .content-wrapper {
+    margin-left: 0;
+  }
+}

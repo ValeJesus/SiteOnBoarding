@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhos - GameOnTech Onboarding</title>
+    <link rel="stylesheet" href="css/styles-palette1.css">
+    <link rel="stylesheet" href="css/trabalhos-style.css">
+</head>
+<body>
+    <div class="container-main">
+        <!-- Sidebar esquerda -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="assets/front.png" alt="Logo"></div>
+                <div class="sidebar-header-content">
+                    <h3>Onboarding</h3>
+                    <p>Portal do Colaborador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index-palette1.html" class="nav-link">
+                    <img src="assets/home (2).svg" alt="Home" class="nav-icon-svg">
+                    <span>Home</span>
+                </a>
+                <a href="logs-palette1.html" class="nav-link">
+                    <img src="assets/chart-simple.svg" alt="Logs" class="nav-icon-svg">
+                    <span>Logs</span>
+                </a>
+                <a href="trabalhos-palette1.html" class="nav-link active">
+                    <img src="assets/suitcase-alt.svg" alt="Trabalhos" class="nav-icon-svg">
+                    <span>Trabalhos</span>
+                </a>
+                <a href="cronograma-palette1.html" class="nav-link">
+                    <img src="assets/calendar-clock.svg" alt="Cronograma" class="nav-icon-svg">
+                    <span>Cronograma</span>
+                </a>
+                <a href="politicas-palette1.html" class="nav-link">
+                    <img src="assets/people-poll.svg" alt="Políticas" class="nav-icon-svg">
+                    <span>Políticas</span>
+                </a>
+                <a href="feedback-palette1.html" class="nav-link">
+                    <img src="assets/feedback.svg" alt="Feedback" class="nav-icon-svg">
+                    <span>Feedback</span>
+                </a>
+                <a href="chat-palette1.html" class="nav-link">
+                    <img src="assets/comment.svg" alt="Chat" class="nav-icon-svg">
+                    <span>Chat</span>
+                </a>
+                <a href="tarefas-palette1.html" class="nav-link">
+                    <img src="assets/task-checklist.svg" alt="Tarefas" class="nav-icon-svg">
+                    <span>Tarefas</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Precisa de ajuda?</p>
+                <p>Fale com seu gestor ou acesse o chat virtual.</p>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <header class="header-main">
+                <a href="index-palette1.html" class="back-link">← Voltar</a>
+                <h2>Novos Trabalhos</h2>
+                <p>Suas tarefas e projetos atribuídos</p>
+            </header>
+
+            <main class="main-content trabalhos-content">
+                <!-- Filtros/Abas -->
+                <div class="trabalhos-tabs">
+                    <button class="tab-btn active" data-filter="todos">Todos</button>
+                    <button class="tab-btn" data-filter="pendentes">Pendentes</button>
+                    <button class="tab-btn" data-filter="andamento">Em Andamento</button>
+                    <button class="tab-btn" data-filter="concluidos">Concluídos</button>
+                </div>
+
+                <!-- Lista de trabalhos -->
+                <section class="trabalhos-section">
+                    <!-- Trabalho 1 -->
+                    <div class="trabalho-item status-concluido">
+                        <div class="trabalho-header">
+                            <div class="trabalho-checkbox">✓</div>
+                            <div>
+                                <h3>Configurar e-mail corporativo</h3>
+                                <p class="trabalho-data">Iniciado em: 3 de fevereiro | Concluído em: 3 de fevereiro</p>
+                            </div>
+                            <span class="trabalho-badge concluido">Concluído</span>
+                        </div>
+                        <div class="trabalho-body">
+                            <p>Acessar o portal de TI e configurar sua conta de e-mail corporativo com as credenciais fornecidas.</p>
+                            <div class="trabalho-meta">
+                                <span class="meta-item">👤 Responsável: João Silva</span>
+                                <span class="meta-item">⏱ Prazo: 3 dias</span>
+                                <span class="meta-item">🎯 Prioridade: Alta</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trabalho 2 -->
+                    <div class="trabalho-item status-andamento">
+                        <div class="trabalho-header">
+                            <div class="trabalho-checkbox">⚡</div>
+                            <div>
+                                <h3>Preencher cadastro de benefícios</h3>
+                                <p class="trabalho-data">Iniciado em: 9 de fevereiro</p>
+                            </div>
+                            <span class="trabalho-badge andamento">Em Andamento</span>
+                        </div>
+                        <div class="trabalho-body">
+                            <p>Acessar o sistema de RH e completar o formulário de benefícios. Informações necessárias estarão no e-mail.</p>
+                            <div class="trabalho-meta">
+                                <span class="meta-item">👤 Responsável: Maria RH</span>
+                                <span class="meta-item">⏱ Prazo: 7 dias</span>
+                                <span class="meta-item">🎯 Prioridade: Média</span>
+                            </div>
+                            <div class="trabalho-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%;"></div>
+                                </div>
+                                <span class="progress-text">65% concluído</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trabalho 3 -->
+                    <div class="trabalho-item status-pendente">
+                        <div class="trabalho-header">
+                            <div class="trabalho-checkbox">○</div>
+                            <div>
+                                <h3>Assistir vídeos de cultura</h3>
+                                <p class="trabalho-data">Prazo: 14 de fevereiro</p>
+                            </div>
+                            <span class="trabalho-badge pendente">Pendente</span>
+                        </div>
+                        <div class="trabalho-body">
+                            <p>Completar os 3 vídeos sobre a cultura da empresa. Estão disponíveis na plataforma de treinamento.</p>
+                            <div class="trabalho-meta">
+                                <span class="meta-item">👤 Responsável: Setor de Cultura</span>
+                                <span class="meta-item">⏱ Prazo: 14 dias</span>
+                                <span class="meta-item">🎯 Prioridade: Baixa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trabalho 4 -->
+                    <div class="trabalho-item status-pendente">
+                        <div class="trabalho-header">
+                            <div class="trabalho-checkbox">○</div>
+                            <div>
+                                <h3>Rodada de apresentações com o time</h3>
+                                <p class="trabalho-data">Agendar para: próxima semana</p>
+                            </div>
+                            <span class="trabalho-badge pendente">Pendente</span>
+                        </div>
+                        <div class="trabalho-body">
+                            <p>Agendar uma reunião com seu time direto para apresentar-se e conhecer melhor cada membro. Duração: ~1 hora.</p>
+                            <div class="trabalho-meta">
+                                <span class="meta-item">👤 Responsável: Seu Gestor</span>
+                                <span class="meta-item">⏱ Prazo: 7 dias</span>
+                                <span class="meta-item">🎯 Prioridade: Alta</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer-main">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="index-palette1.html">Home</a>
+                        <a href="logs-palette1.html">Logs</a>
+                        <a href="trabalhos-palette1.html">Trabalhos</a>
+                        <a href="cronograma-palette1.html">Cronograma</a>
+                        <a href="politicas-palette1.html">Políticas</a>
+                        <a href="feedback-palette1.html">Feedback</a>
+                        <a href="chat-palette1.html">Chat</a>
+                        <a href="tarefas-palette1.html">Tarefas</a>
+                    </div>
+                    <p>&copy; 2026 GameOnTech | João Vitor, Davi Tavares e Felipe Buso</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/trabalhos-filter.js"></script>
+</body>
+</html>

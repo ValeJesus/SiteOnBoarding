@@ -1,0 +1,105 @@
+/* ===== CRONOGRAMA PAGE ===== */
+.cronograma-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== TABELAS ===== */
+.eventos-table-container {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow-x: auto;
+}
+
+.eventos-table,
+.horarios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.eventos-table thead,
+.horarios-table thead {
+  background: linear-gradient(135deg, var(--color2) 0%, var(--color3) 100%);
+  color: var(--white);
+}
+
+.eventos-table th,
+.horarios-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.eventos-table td,
+.horarios-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--bg-light);
+  color: var(--text-light);
+}
+
+.eventos-table tr:hover,
+.horarios-table tr:hover {
+  background-color: var(--bg-light);
+}
+
+.eventos-table td strong {
+  color: var(--color4);
+}
+
+/* ===== BADGES DE TIPO ===== */
+.tipo-badge {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.tipo-social {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.tipo-treinamento {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.tipo-reuniao {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+/* ===== HORÁRIOS IMPORTANTES ===== */
+.horarios-section {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.horarios-section h3 {
+  color: var(--color4);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .eventos-table,
+  .horarios-table {
+    font-size: 0.85rem;
+  }
+  
+  .eventos-table th,
+  .horarios-table th,
+  .eventos-table td,
+  .horarios-table td {
+    padding: 10px;
+  }
+}

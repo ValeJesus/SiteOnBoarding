@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - GameOnTech Onboarding</title>
+    <link rel="stylesheet" href="css/styles-palette1.css">
+    <link rel="stylesheet" href="css/chat-style.css">
+</head>
+<body>
+    <div class="container-main">
+        <!-- Sidebar esquerda -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="assets/front.png" alt="Logo"></div>
+                <div class="sidebar-header-content">
+                    <h3>Onboarding</h3>
+                    <p>Portal do Colaborador</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index-palette1.html" class="nav-link">
+                    <img src="assets/home (2).svg" alt="Home" class="nav-icon-svg">
+                    <span>Home</span>
+                </a>
+                <a href="logs-palette1.html" class="nav-link">
+                    <img src="assets/chart-simple.svg" alt="Logs" class="nav-icon-svg">
+                    <span>Logs</span>
+                </a>
+                <a href="trabalhos-palette1.html" class="nav-link">
+                    <img src="assets/suitcase-alt.svg" alt="Trabalhos" class="nav-icon-svg">
+                    <span>Trabalhos</span>
+                </a>
+                <a href="cronograma-palette1.html" class="nav-link">
+                    <img src="assets/calendar-clock.svg" alt="Cronograma" class="nav-icon-svg">
+                    <span>Cronograma</span>
+                </a>
+                <a href="politicas-palette1.html" class="nav-link">
+                    <img src="assets/people-poll.svg" alt="Políticas" class="nav-icon-svg">
+                    <span>Políticas</span>
+                </a>
+                <a href="feedback-palette1.html" class="nav-link">
+                    <img src="assets/feedback.svg" alt="Feedback" class="nav-icon-svg">
+                    <span>Feedback</span>
+                </a>
+                <a href="chat-palette1.html" class="nav-link active">
+                    <img src="assets/comment.svg" alt="Chat" class="nav-icon-svg">
+                    <span>Chat</span>
+                </a>
+                <a href="tarefas-palette1.html" class="nav-link">
+                    <img src="assets/task-checklist.svg" alt="Tarefas" class="nav-icon-svg">
+                    <span>Tarefas</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Precisa de ajuda?</p>
+                <p>Fale com seu gestor ou acesse o chat virtual.</p>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <header class="header-main">
+                <a href="index-palette1.html" class="back-link">← Voltar</a>
+                <h2>Conversa com Gerente</h2>
+                <p>Simulador para perguntas e conversas com seu chefe</p>
+            </header>
+
+            <main class="main-content chat-content">
+                <!-- Info section -->
+                <section class="chat-info">
+                    <p>💡 <strong>Dica:</strong> Este é um simulador de conversa. Escolha uma pergunta comum para praticar como abordar seu gestor ou colegas.</p>
+                </section>
+
+                <!-- Chat interface -->
+                <div class="chat-container">
+                    <!-- Header da conversa -->
+                    <div class="chat-header">
+                        <div class="chat-contact">
+                            <div class="contact-avatar">JP</div>
+                            <div class="contact-info">
+                                <h4>João Paulo</h4>
+                                <p>Seu Gestor Direto</p>
+                            </div>
+                        </div>
+                        <button class="btn-reset" onclick="resetChat()">🔄 Resetar Chat</button>
+                    </div>
+
+                    <!-- Área de mensagens -->
+                    <div class="messages-area" id="messagesArea">
+                        <div class="message-group system">
+                            <div class="message">
+                                <p>Olá! Bem-vindo. Como posso ajudá-lo? Fique livre para fazer qualquer pergunta.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sugestões de perguntas -->
+                    <div class="quick-replies">
+                        <button class="reply-btn" onclick="sendMessage('Oque eu devo fazer agora? Quais são minhas próximas tarefas?')">
+                            ❓ O que devo fazer?
+                        </button>
+                        <button class="reply-btn" onclick="sendMessage('Como estou indo até agora? Você tem algum feedback para mim?')">
+                            📊 Como estou indo?
+                        </button>
+                        <button class="reply-btn" onclick="sendMessage('Com quem devo falar sobre problemas técnicos?')">
+                            👥 Com quem falar?
+                        </button>
+                        <button class="reply-btn" onclick="sendMessage('Qual é a melhor forma de trabalhar com a equipe?')">
+                            🤝 Trabalho em equipe
+                        </button>
+                        <button class="reply-btn" onclick="sendMessage('Quais são meus objetivos para os próximos 3 meses?')">
+                            🎯 Objetivos futuros
+                        </button>
+                        <button class="reply-btn" onclick="sendMessage('Como faço para acessar os benefícios da empresa?')">
+                            🎁 Benefícios
+                        </button>
+                    </div>
+
+                    <!-- Input de mensagem -->
+                    <div class="message-input-container">
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            class="message-input" 
+                            placeholder="Digite sua pergunta..." 
+                            onkeypress="handleKeyPress(event)"
+                        >
+                        <button class="btn-send" onclick="sendMessage()">➤ Enviar</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer-main">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <a href="index-palette1.html">Home</a>
+                        <a href="logs-palette1.html">Logs</a>
+                        <a href="trabalhos-palette1.html">Trabalhos</a>
+                        <a href="cronograma-palette1.html">Cronograma</a>
+                        <a href="politicas-palette1.html">Políticas</a>
+                        <a href="feedback-palette1.html">Feedback</a>
+                        <a href="chat-palette1.html">Chat</a>
+                        <a href="tarefas-palette1.html">Tarefas</a>
+                    </div>
+                    <p>&copy; 2026 GameOnTech | João Vitor, Davi Tavares e Felipe Buso</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/chat-simulator.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* ===== FEEDBACK PAGE ===== */
+.feedback-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===== COMPETÊNCIAS (RADAR CHART) ===== */
+.competencias-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.competencias-section h3 {
+  color: var(--color4);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.radar-chart-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== FEEDBACKS RECEBIDOS ===== */
+.feedbacks-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.feedbacks-section h3 {
+  color: var(--color4);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.feedbacks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-card {
+  background: var(--bg-light);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--color2);
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.feedback-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color2) 0%, var(--color3) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.feedback-author h4 {
+  color: var(--color4);
+  margin-bottom: 2px;
+  font-size: 1.1rem;
+}
+
+.feedback-author p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.feedback-rating {
+  font-size: 1.2rem;
+}
+
+.feedback-comment {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.feedback-date {
+  color: var(--color3);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .feedback-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .radar-chart-container {
+    max-width: 100%;
+  }
+}
