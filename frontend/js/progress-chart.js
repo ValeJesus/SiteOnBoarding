@@ -30,15 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
             datasets: [{
                 data: [33, 67],
                 backgroundColor: [
-                    '#6b9997', // Completo - Color3
-                    '#c6cca5'  // Pendente - Color1
+                    '#8B41F2', // Completo - Roxo (color3)
+                    '#1F5AA6'  // Pendente - Azul (color4)
                 ],
                 borderColor: [
-                    '#54787d', // Color4
-                    '#8ab8a8'  // Color2
+                    '#763DF2', // Roxo escuro (color5)
+                    '#1a4a8a'  // Azul escuro
                 ],
                 borderWidth: 2,
-                hoverBorderColor: '#54787d',
+                hoverBorderColor: '#763DF2',
                 hoverBorderWidth: 3
             }]
         },
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             return context.label + ': ' + context.parsed + '%';
                         }
                     },
-                    backgroundColor: 'rgba(84, 120, 125, 0.9)',
+                    backgroundColor: 'rgba(118, 61, 242, 0.9)',
                     padding: 12,
                     titleFont: {
                         size: 12,
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     bodyFont: {
                         size: 12
                     },
-                    borderColor: '#6b9997',
+                    borderColor: '#8B41F2',
                     borderWidth: 1
                 },
                 legend: {
