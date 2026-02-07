@@ -9,6 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <button class="login-button" id="loginOpen" type="button">Login</button>
+    <div class="login-modal" id="loginModal" aria-hidden="true">
+        <div class="login-modal__panel" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <button class="login-modal__close" id="loginClose" type="button" aria-label="Fechar">×</button>
+            <h3 id="loginTitle">Entrar</h3>
+            <form class="login-form">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" name="email" placeholder="voce@empresa.com" required>
+                <label for="loginPassword">Senha</label>
+                <input id="loginPassword" type="password" name="password" placeholder="Sua senha" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
     <div class="container-main">
         <!-- Sidebar esquerda -->
         <aside class="sidebar">
@@ -37,6 +51,10 @@
                     <img src="assets/calendar-clock.svg" alt="Cronograma" class="nav-icon-svg">
                     <span>Cronograma</span>
                 </a>
+                <a href="treinamento-palette1.html" class="nav-link">
+                    <img src="assets/treinamento.svg" alt="Treinamento" class="nav-icon-svg">
+                    <span>Treinamento</span>
+                </a>
                 <a href="politicas-palette1.html" class="nav-link">
                     <img src="assets/people-poll.svg" alt="Políticas" class="nav-icon-svg">
                     <span>Políticas</span>
@@ -46,8 +64,12 @@
                     <span>Feedback</span>
                 </a>
                 <a href="chat-palette1.html" class="nav-link">
-                    <img src="assets/comment.svg" alt="Chat" class="nav-icon-svg">
-                    <span>Chat</span>
+                    <img src="assets/comment.svg" alt="Assistente Virtual" class="nav-icon-svg">
+                    <span>Assistente Virtual</span>
+                </a>
+                <a href="conversa-gerente-palette1.html" class="nav-link">
+                    <img src="assets/gerentesvg.svg" alt="Conversa com o Gerente" class="nav-icon-svg">
+                    <span>Conversa com o Gerente</span>
                 </a>
                 <a href="tarefas-palette1.html" class="nav-link">
                     <img src="assets/task-checklist.svg" alt="Tarefas" class="nav-icon-svg">
@@ -184,9 +206,11 @@
                         <a href="logs-palette1.html">Logs</a>
                         <a href="trabalhos-palette1.html">Trabalhos</a>
                         <a href="cronograma-palette1.html">Cronograma</a>
+                        <a href="treinamento-palette1.html">Treinamento</a>
                         <a href="politicas-palette1.html">Políticas</a>
                         <a href="feedback-palette1.html">Feedback</a>
-                        <a href="chat-palette1.html">Chat</a>
+                        <a href="chat-palette1.html">Assistente Virtual</a>
+                        <a href="conversa-gerente-palette1.html">Conversa com o Gerente</a>
                         <a href="tarefas-palette1.html">Tarefas</a>
                     </div>
                     <p>&copy; 2026 GameOnTech | João Vitor, Davi Tavares e Felipe Buso</p>
@@ -196,5 +220,6 @@
     </div>
 
     <script src="js/feedback-chart.js"></script>
+    <script src="js/login-modal.js"></script>
 </body>
 </html>

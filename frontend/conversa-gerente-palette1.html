@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistente Virtual - GameOnTech Onboarding</title>
+    <title>Conversa com o Gerente - GameOnTech Onboarding</title>
     <link rel="stylesheet" href="css/styles-palette1.css">
     <link rel="stylesheet" href="css/chat-style.css">
 </head>
@@ -86,14 +86,14 @@
         <div class="content">
             <header class="header-main">
                 <a href="index-palette1.html" class="back-link">← Voltar</a>
-                <h2>Assistente Virtual</h2>
-                <p>Tire duvidas rapidamente sobre processos e onboarding</p>
+                <h2>Conversa com o Gerente</h2>
+                <p>Simulador para perguntas e conversas com seu chefe</p>
             </header>
 
             <main class="main-content chat-content">
                 <!-- Info section -->
                 <section class="chat-info">
-                    <p>💡 <strong>Dica:</strong> Use o assistente para resolver duvidas do dia a dia e encontrar atalhos importantes.</p>
+                    <p>💡 <strong>Dica:</strong> Use esta conversa para praticar feedbacks e alinhamentos com seu gestor.</p>
                 </section>
 
                 <!-- Chat interface -->
@@ -101,10 +101,10 @@
                     <!-- Header da conversa -->
                     <div class="chat-header">
                         <div class="chat-contact">
-                            <div class="contact-avatar">AV</div>
+                            <div class="contact-avatar">JP</div>
                             <div class="contact-info">
-                                <h4>Assistente Virtual</h4>
-                                <p>Atendimento interno</p>
+                                <h4>João Paulo</h4>
+                                <p>Seu Gestor Direto</p>
                             </div>
                         </div>
                         <button class="btn-reset" onclick="resetChat()">🔄 Resetar Chat</button>
@@ -114,30 +114,30 @@
                     <div class="messages-area" id="messagesArea">
                         <div class="message-group system">
                             <div class="message">
-                                <p>Ola! Estou aqui para ajudar. Qual duvida voce gostaria de resolver?</p>
+                                <p>Oi! Podemos conversar. Como posso ajudar no seu desenvolvimento?</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Sugestões de perguntas -->
                     <div class="quick-replies">
-                        <button class="reply-btn" onclick="sendMessage('Quais sao minhas proximas tarefas hoje?')">
-                            ✅ Proximas tarefas
+                        <button class="reply-btn" onclick="sendMessage('Quais sao minhas prioridades para esta semana?')">
+                            ✅ Prioridades da semana
                         </button>
-                        <button class="reply-btn" onclick="sendMessage('Como acesso e-mail corporativo e VPN?')">
-                            🔐 Acesso e VPN
+                        <button class="reply-btn" onclick="sendMessage('Voce pode revisar meu progresso no onboarding?')">
+                            📊 Revisar progresso
                         </button>
-                        <button class="reply-btn" onclick="sendMessage('Onde encontro as politicas e documentos internos?')">
-                            📄 Politicas e docs
+                        <button class="reply-btn" onclick="sendMessage('Como posso melhorar minha comunicacao com o time?')">
+                            🤝 Melhorar comunicacao
                         </button>
-                        <button class="reply-btn" onclick="sendMessage('Qual e o fluxo para abrir chamado de suporte?')">
-                            🛠 Suporte tecnico
+                        <button class="reply-btn" onclick="sendMessage('Quando podemos marcar uma 1-on-1?')">
+                            📅 Agendar 1-on-1
                         </button>
-                        <button class="reply-btn" onclick="sendMessage('Como registrar ponto e solicitar ferias?')">
-                            🗓 RH e ponto
+                        <button class="reply-btn" onclick="sendMessage('Preciso de acesso a uma ferramenta. Como seguimos?')">
+                            🔐 Pedir acesso
                         </button>
-                        <button class="reply-btn" onclick="sendMessage('Quais cursos obrigatorios devo concluir?')">
-                            🎓 Cursos obrigatorios
+                        <button class="reply-btn" onclick="sendMessage('Quais sao as expectativas para os proximos 3 meses?')">
+                            🎯 Metas 3 meses
                         </button>
                     </div>
 

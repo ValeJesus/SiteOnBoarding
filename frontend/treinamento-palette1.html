@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistente Virtual - GameOnTech Onboarding</title>
+    <title>Treinamento - GameOnTech Onboarding</title>
     <link rel="stylesheet" href="css/styles-palette1.css">
-    <link rel="stylesheet" href="css/chat-style.css">
+    <link rel="stylesheet" href="css/treinamento-style.css">
 </head>
 <body>
     <button class="login-button" id="loginOpen" type="button">Login</button>
@@ -50,7 +50,7 @@
                     <img src="assets/calendar-clock.svg" alt="Cronograma" class="nav-icon-svg">
                     <span>Cronograma</span>
                 </a>
-                <a href="treinamento-palette1.html" class="nav-link">
+                <a href="treinamento-palette1.html" class="nav-link active">
                     <img src="assets/treinamentosvg.svg" alt="Treinamento" class="nav-icon-svg">
                     <span>Treinamento</span>
                 </a>
@@ -62,11 +62,11 @@
                     <img src="assets/feedback.svg" alt="Feedback" class="nav-icon-svg">
                     <span>Feedback</span>
                 </a>
-                <a href="chat-palette1.html" class="nav-link active">
+                <a href="chat-palette1.html" class="nav-link">
                     <img src="assets/comment.svg" alt="Assistente Virtual" class="nav-icon-svg">
                     <span>Assistente Virtual</span>
                 </a>
-                <a href="conversa-gerente-palette1.html" class="nav-link active">
+                <a href="conversa-gerente-palette1.html" class="nav-link">
                     <img src="assets/gerentesvg.svg" alt="Conversa com o Gerente" class="nav-icon-svg">
                     <span>Conversa com o Gerente</span>
                 </a>
@@ -86,73 +86,80 @@
         <div class="content">
             <header class="header-main">
                 <a href="index-palette1.html" class="back-link">← Voltar</a>
-                <h2>Assistente Virtual</h2>
-                <p>Tire duvidas rapidamente sobre processos e onboarding</p>
+                <h2>Treinamentos Essenciais</h2>
+                <p>Capacitacoes basicas para iniciar com seguranca</p>
             </header>
 
-            <main class="main-content chat-content">
-                <!-- Info section -->
-                <section class="chat-info">
-                    <p>💡 <strong>Dica:</strong> Use o assistente para resolver duvidas do dia a dia e encontrar atalhos importantes.</p>
+            <main class="main-content treinamento-content">
+                <section class="treinamento-intro">
+                    <h3>Seus cursos obrigatorios</h3>
+                    <p>Complete os treinamentos iniciais para liberar o acesso total aos sistemas.</p>
                 </section>
 
-                <!-- Chat interface -->
-                <div class="chat-container">
-                    <!-- Header da conversa -->
-                    <div class="chat-header">
-                        <div class="chat-contact">
-                            <div class="contact-avatar">AV</div>
-                            <div class="contact-info">
-                                <h4>Assistente Virtual</h4>
-                                <p>Atendimento interno</p>
-                            </div>
+                <section class="treinamento-grid">
+                    <div class="curso-card">
+                        <h4>Seguranca da Informacao</h4>
+                        <p>Boas praticas de senha, phishing e protecao de dados sensiveis.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge pendente">⏱ 40 min</span>
+                            <span class="curso-badge pendente">Pendente</span>
+                            <span class="curso-badge">Obrigatorio</span>
                         </div>
-                        <button class="btn-reset" onclick="resetChat()">🔄 Resetar Chat</button>
+                        <a class="curso-acao" href="#">Iniciar curso →</a>
                     </div>
 
-                    <!-- Área de mensagens -->
-                    <div class="messages-area" id="messagesArea">
-                        <div class="message-group system">
-                            <div class="message">
-                                <p>Ola! Estou aqui para ajudar. Qual duvida voce gostaria de resolver?</p>
-                            </div>
+                    <div class="curso-card">
+                        <h4>Politicas e Conduta</h4>
+                        <p>Entenda o codigo de etica, convivencia e comunicacao interna.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge em-andamento">⏱ 30 min</span>
+                            <span class="curso-badge em-andamento">Em andamento</span>
+                            <span class="curso-badge">Obrigatorio</span>
                         </div>
+                        <a class="curso-acao" href="#">Continuar →</a>
                     </div>
 
-                    <!-- Sugestões de perguntas -->
-                    <div class="quick-replies">
-                        <button class="reply-btn" onclick="sendMessage('Quais sao minhas proximas tarefas hoje?')">
-                            ✅ Proximas tarefas
-                        </button>
-                        <button class="reply-btn" onclick="sendMessage('Como acesso e-mail corporativo e VPN?')">
-                            🔐 Acesso e VPN
-                        </button>
-                        <button class="reply-btn" onclick="sendMessage('Onde encontro as politicas e documentos internos?')">
-                            📄 Politicas e docs
-                        </button>
-                        <button class="reply-btn" onclick="sendMessage('Qual e o fluxo para abrir chamado de suporte?')">
-                            🛠 Suporte tecnico
-                        </button>
-                        <button class="reply-btn" onclick="sendMessage('Como registrar ponto e solicitar ferias?')">
-                            🗓 RH e ponto
-                        </button>
-                        <button class="reply-btn" onclick="sendMessage('Quais cursos obrigatorios devo concluir?')">
-                            🎓 Cursos obrigatorios
-                        </button>
+                    <div class="curso-card">
+                        <h4>Ferramentas do Dia a Dia</h4>
+                        <p>Guia rapido para e-mail, agenda, chat interno e VPN.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge">⏱ 25 min</span>
+                            <span class="curso-badge">Opcional</span>
+                        </div>
+                        <a class="curso-acao" href="#">Ver conteudo →</a>
                     </div>
 
-                    <!-- Input de mensagem -->
-                    <div class="message-input-container">
-                        <input 
-                            type="text" 
-                            id="messageInput" 
-                            class="message-input" 
-                            placeholder="Digite sua pergunta..." 
-                            onkeypress="handleKeyPress(event)"
-                        >
-                        <button class="btn-send" onclick="sendMessage()">➤ Enviar</button>
+                    <div class="curso-card">
+                        <h4>Processos de Suporte</h4>
+                        <p>Como abrir chamados, acompanhar SLAs e pedir acessos.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge concluido">✅ Concluido</span>
+                            <span class="curso-badge">Obrigatorio</span>
+                        </div>
+                        <a class="curso-acao" href="#">Revisar →</a>
                     </div>
-                </div>
+
+                    <div class="curso-card">
+                        <h4>Integracao com a Equipe</h4>
+                        <p>Boas praticas de comunicacao, rituais e alinhamento.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge">⏱ 20 min</span>
+                            <span class="curso-badge">Opcional</span>
+                        </div>
+                        <a class="curso-acao" href="#">Iniciar →</a>
+                    </div>
+
+                    <div class="curso-card">
+                        <h4>Compliance e LGPD</h4>
+                        <p>Responsabilidades legais e tratamento correto de dados pessoais.</p>
+                        <div class="curso-meta">
+                            <span class="curso-badge pendente">⏱ 35 min</span>
+                            <span class="curso-badge pendente">Pendente</span>
+                            <span class="curso-badge">Obrigatorio</span>
+                        </div>
+                        <a class="curso-acao" href="#">Iniciar curso →</a>
+                    </div>
+                </section>
             </main>
 
             <!-- Footer -->
@@ -176,7 +183,6 @@
         </div>
     </div>
 
-    <script src="js/chat-simulator.js"></script>
     <script src="js/login-modal.js"></script>
 </body>
 </html>

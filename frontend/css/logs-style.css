@@ -162,21 +162,6 @@
     transform: scale(0.98);
 }
 
-/* Link para voltar no header */
-.back-link {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    margin-bottom: 15px;
-    transition: opacity 0.3s ease;
-    font-size: 1rem;
-}
-
-.back-link:hover {
-    opacity: 0.8;
-}
-
 /* Responsividade para tablets */
 @media (max-width: 768px) {
     .logs-section {
