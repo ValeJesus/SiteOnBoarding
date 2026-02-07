@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     '#1F5AA6'  // Pendente - Azul (color4)
                 ],
                 borderColor: [
-                    '#763DF2', // Roxo escuro (color5)
-                    '#1a4a8a'  // Azul escuro
+                    '#5917e7', // Roxo escuro (color5)
+                    '#0a346b'  // Azul escuro
                 ],
                 borderWidth: 2,
                 hoverBorderColor: '#763DF2',
