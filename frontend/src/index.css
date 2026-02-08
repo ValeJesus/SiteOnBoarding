@@ -93,3 +93,34 @@ body {
 .p-2 { padding: 1rem; }
 .p-3 { padding: 1.5rem; }
 .p-4 { padding: 2rem; }
+
+/* ===== LOADING CONTAINER ===== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  min-height: 300px;
+}
+
+.loading-container .spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #707b7b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
