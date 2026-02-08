@@ -1,19 +1,18 @@
 {
   "name": "gameontech-onboarding",
-  "version": "1.0.0",
-  "description": "Sistema de Onboarding - GameOnTech",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && npm run dev",
-    "build": "cd frontend && npm run build"
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "mvn spring-boot:run",
+    "build": "vite build",
+    "preview": "vite preview"
   },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vite": "^5.0.0"
+  }
+,
   "keywords": [
     "onboarding",
     "react",
@@ -21,8 +20,6 @@
     "express"
   ],
   "author": "GameOnTech",
-  "license": "MIT",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "license": "MIT"
+  
 }
