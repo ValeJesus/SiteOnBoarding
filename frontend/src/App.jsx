@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
+import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
+import UsersPage from './pages/UsersPage/UsersPage';
 import Home from './pages/Home/Home';
 import Logs from './pages/Logs/Logs';
 import Trabalhos from './pages/Trabalhos/Trabalhos';
@@ -14,8 +19,19 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        {/* Rotas públicas de autenticação */}
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        
+        {/* Rotas protegidas com Layout */}
+        <Route path="/" element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }>
           <Route index element={<Home />} />
+          <Route path="users" element={<UsersPage />} />
           <Route path="logs" element={<Logs />} />
           <Route path="trabalhos" element={<Trabalhos />} />
           <Route path="cronograma" element={<Cronograma />} />
