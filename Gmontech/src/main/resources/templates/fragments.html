@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">GameOnTech Onboarding</title>
+    <link rel="stylesheet" th:href="@{/css/styles-palette1.css}">
+    <link th:if="${additionalCss}" rel="stylesheet" th:href="@{${additionalCss}}">
+    <script th:if="${includeChart}" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+<!-- Login Modal Fragment -->
+<div th:fragment="login-modal">
+    <button class="login-button" id="loginOpen" type="button">Login</button>
+    <div class="login-modal" id="loginModal" aria-hidden="true">
+        <div class="login-modal__panel" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <button class="login-modal__close" id="loginClose" type="button" aria-label="Fechar">×</button>
+            <h3 id="loginTitle">Entrar</h3>
+            <form class="login-form">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" name="email" placeholder="voce@empresa.com" required>
+                <label for="loginPassword">Senha</label>
+                <input id="loginPassword" type="password" name="password" placeholder="Sua senha" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar Fragment -->
+<aside th:fragment="sidebar(activePage)" class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo"><img th:src="@{/assets/front.png}" alt="Logo"></div>
+        <div class="sidebar-header-content">
+            <h3>Onboarding</h3>
+            <p>Portal do Colaborador</p>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a th:href="@{/home}" class="nav-link" th:classappend="${activePage == 'home'} ? 'active' : ''">
+            <img th:src="@{/assets/home (2).svg}" alt="Home" class="nav-icon-svg">
+            <span>Home</span>
+        </a>
+        <a th:href="@{/logs}" class="nav-link" th:classappend="${activePage == 'logs'} ? 'active' : ''">
+            <img th:src="@{/assets/chart-simple.svg}" alt="Logs" class="nav-icon-svg">
+            <span>Logs</span>
+        </a>
+        <a th:href="@{/trabalhos}" class="nav-link" th:classappend="${activePage == 'trabalhos'} ? 'active' : ''">
+            <img th:src="@{/assets/suitcase-alt.svg}" alt="Trabalhos" class="nav-icon-svg">
+            <span>Trabalhos</span>
+        </a>
+        <a th:href="@{/cronograma}" class="nav-link" th:classappend="${activePage == 'cronograma'} ? 'active' : ''">
+            <img th:src="@{/assets/calendar-clock.svg}" alt="Cronograma" class="nav-icon-svg">
+            <span>Cronograma</span>
+        </a>
+        <a th:href="@{/treinamento}" class="nav-link" th:classappend="${activePage == 'treinamento'} ? 'active' : ''">
+            <img th:src="@{/assets/treinamentosvg.svg}" alt="Treinamento" class="nav-icon-svg">
+            <span>Treinamento</span>
+        </a>
+        <a th:href="@{/politicas}" class="nav-link" th:classappend="${activePage == 'politicas'} ? 'active' : ''">
+            <img th:src="@{/assets/people-poll.svg}" alt="Políticas" class="nav-icon-svg">
+            <span>Políticas</span>
+        </a>
+        <a th:href="@{/feedback}" class="nav-link" th:classappend="${activePage == 'feedback'} ? 'active' : ''">
+            <img th:src="@{/assets/feedback.svg}" alt="Feedback" class="nav-icon-svg">
+            <span>Feedback</span>
+        </a>
+        <a th:href="@{/chat}" class="nav-link" th:classappend="${activePage == 'chat'} ? 'active' : ''">
+            <img th:src="@{/assets/comment.svg}" alt="Assistente Virtual" class="nav-icon-svg">
+            <span>Assistente Virtual</span>
+        </a>
+        <a th:href="@{/conversa-gerente}" class="nav-link" th:classappend="${activePage == 'conversa-gerente'} ? 'active' : ''">
+            <img th:src="@{/assets/gerentesvg.svg}" alt="Conversa com o Gerente" class="nav-icon-svg">
+            <span>Conversa com o Gerente</span>
+        </a>
+        <a th:href="@{/tarefas}" class="nav-link" th:classappend="${activePage == 'tarefas'} ? 'active' : ''">
+            <img th:src="@{/assets/task-checklist.svg}" alt="Tarefas" class="nav-icon-svg">
+            <span>Tarefas</span>
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <p>Precisa de ajuda?</p>
+        <p>Fale com seu gestor ou acesse o chat virtual.</p>
+    </div>
+</aside>
+
+<!-- Header Fragment -->
+<header th:fragment="header(title, subtitle, showBackButton)" class="header-main">
+    <a th:if="${showBackButton}" th:href="@{/home}" class="back-link">← Voltar</a>
+    <h2 th:text="${title}">Título da Página</h2>
+    <p th:if="${subtitle}" th:text="${subtitle}">Subtítulo da página</p>
+</header>
+
+<!-- Footer Fragment -->
+<footer th:fragment="footer" class="footer-main">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/logs}">Logs</a>
+            <a th:href="@{/trabalhos}">Trabalhos</a>
+            <a th:href="@{/cronograma}">Cronograma</a>
+            <a th:href="@{/treinamento}">Treinamento</a>
+            <a th:href="@{/politicas}">Políticas</a>
+            <a th:href="@{/feedback}">Feedback</a>
+            <a th:href="@{/chat}">Assistente Virtual</a>
+            <a th:href="@{/conversa-gerente}">Conversa com o Gerente</a>
+            <a th:href="@{/tarefas}">Tarefas</a>
+        </div>
+        <p>&copy; 2026 GameOnTech | João Vitor, Davi Tavares e Leonardo Buso</p>
+    </div>
+</footer>
+
+<!-- Tutorial Modal Fragment -->
+<div th:fragment="tutorial-modal">
+    <div class="tutorial-modal" id="tutorialModal" aria-hidden="true">
+        <div class="tutorial-screen" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+            <button class="tutorial-close" id="tutorialClose" type="button" aria-label="Fechar Tutorial">×</button>
+            
+            <!-- Slides do Tutorial -->
+            <div class="tutorial-slides-container">
+                <!-- Slide 1: Home -->
+                <div class="tutorial-slide active">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/home.png}" alt="Home" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2 id="tutorialTitle">🎮 Bem-vindo ao GameOnTech!</h2>
+                            <p class="tutorial-description">
+                                Esta é sua HOME, o coração do portal de onboarding! Aqui você tem uma visão geral de tudo o que vai precisar durante sua jornada com a gente.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Você consegue acompanhar seu progresso, explorar todas as seções de aprendizado e acessar ferramentas para interagir com seu time. Vamos começar esta aventura? 🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Logs -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/logs.png}" alt="Logs" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>📊 Acompanhe seu Histórico</h2>
+                            <p class="tutorial-description">
+                                Nesta seção você visualiza TODOS os seus acessos, marcos alcançados e atividades que completou durante o onboarding.
+                            </p>
+                            <p class="tutorial-motivation">
+                                É como um diário do seu progresso! Você consegue ver exatamente quando visitou cada seção e o que realizou. Muito útil para acompanhamento! 📈
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Trabalhos -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/trabalhos.png}" alt="Trabalhos" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>💼 Seus Trabalhos e Projetos</h2>
+                            <p class="tutorial-description">
+                                Aqui você encontra todos os projetos e tarefas que foram atribuídos a você para colocar em prática seus novos conhecimentos.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Cada projeto é uma oportunidade de aprender fazendo! Você vai ganhar experiência real e mostrar seu potencial para o time! 💪
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Cronograma -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/cronograma.png}" alt="Cronograma" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>📅 Seu Cronograma</h2>
+                            <p class="tutorial-description">
+                                Veja todos os eventos, reuniões, treinamentos e momentos importantes que estão agendados para você durante o onboarding.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Non-va perder nada! O cronograma mostra exatamente quando você tem compromissos importantes. Agenda tudo na sua agenda pessoal também! ⏰
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Treinamento -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/treinamento.png}" alt="Treinamento" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>🎓 Cursos e Treinamentos</h2>
+                            <p class="tutorial-description">
+                                Esta é a seção de aprendizado! Aqui estão todos os cursos essenciais que você precisa fazer para se tornar um especialista na GameOnTech.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Invista em seu desenvolvimento! Cada curso concluído é mais um passo para sua excelência profissional! 📚✨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Políticas -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/politicas.png}" alt="Políticas" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>📋 Políticas e Cultura</h2>
+                            <p class="tutorial-description">
+                                Conhecer as regras do jogo é importante! Aqui você tem acesso aos documentos sobre normas, benefícios e a cultura da GameOnTech.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Ler com atenção vai te ajudar a se integrar melhor ao time e entender como funciona tudo por aqui! 🏢
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Feedback -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/Feedback.png}" alt="Feedback" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>💬 Receba Feedback</h2>
+                            <p class="tutorial-description">
+                                Feedback é uma ferramenta poderosa! Aqui você pode acompanhar comentários sobre seu desempenho e sua evolução durante o onboarding.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Cada feedback é uma oportunidade de crescimento! Escute com o coração aberto e use para melhorar cada dia mais! 📊💡
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Chat/Assistente -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/assist_Virtual.png}" alt="Assistente Virtual" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>🤖 Assistente Virtual</h2>
+                            <p class="tutorial-description">
+                                Tem uma dúvida? Aqui você tem acesso a um assistente virtual que pode responder suas perguntas sobre processos, políticas e procedimentos.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Disponível 24/7 para ajudá-lo! Não é a mesma coisa que falar com gente, mas é super útil para tirar dúvidas rápidas! 💬🚀
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 9: Conversa com Gerente -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/gerente.png}" alt="Conversa com Gerente" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>👔 Pratique com seu Gerente</h2>
+                            <p class="tutorial-description">
+                                Quer ficar nervoso conversando com seu gestor? Aqui você tem um simulador para praticar! Converse com ele, faça perguntas e ganhe confiança.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Praticar torna perfeito! Quando chegar em uma conversa real com seu gerente, você já vai estar preparado! 💪👔
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Tarefas -->
+                <div class="tutorial-slide">
+                    <div class="tutorial-content">
+                        <div class="tutorial-image-section">
+                            <img th:src="@{/assets/tarefas.png}" alt="Tarefas" class="tutorial-image">
+                        </div>
+                        <div class="tutorial-text-section">
+                            <h2>✅ Suas Tarefas</h2>
+                            <p class="tutorial-description">
+                                Este é seu painel de tarefas! Aqui vous consegue ver tudo o que precisa fazer, marcar como concluído e acompanhar seu progresso.
+                            </p>
+                            <p class="tutorial-motivation">
+                                Nada melhor do que a satisfação de marcar uma tarefa como feita! Continue conquistando seus objetivos dia a dia! 🎉
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegação de Slides -->
+            <div class="tutorial-navigation">
+                <button class="tutorial-nav-btn tutorial-nav-prev" id="tutorialPrev" aria-label="Slide anterior">
+                    ← Anterior
+                </button>
+                <div class="tutorial-indicators">
+                    <span class="tutorial-counter"><span id="tutorialCurrent">1</span> / 10</span>
+                    <div class="tutorial-dots">
+                        <span class="tutorial-dot active" data-slide="0"></span>
+                        <span class="tutorial-dot" data-slide="1"></span>
+                        <span class="tutorial-dot" data-slide="2"></span>
+                        <span class="tutorial-dot" data-slide="3"></span>
+                        <span class="tutorial-dot" data-slide="4"></span>
+                        <span class="tutorial-dot" data-slide="5"></span>
+                        <span class="tutorial-dot" data-slide="6"></span>
+                        <span class="tutorial-dot" data-slide="7"></span>
+                        <span class="tutorial-dot" data-slide="8"></span>
+                        <span class="tutorial-dot" data-slide="9"></span>
+                    </div>
+                </div>
+                <button class="tutorial-nav-btn tutorial-nav-next" id="tutorialNext" aria-label="Próximo slide">
+                    Próximo →
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts Fragment -->
+<div th:fragment="scripts(scriptFiles)">
+    <script th:each="scriptFile : ${scriptFiles}" th:src="@{${scriptFile}}"></script>
+    <script th:src="@{/js/login-modal.js}"></script>
+</div>
+
+</body>
+</html>
